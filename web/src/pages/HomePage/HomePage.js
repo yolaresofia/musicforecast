@@ -36,11 +36,13 @@ const HomePage = () => {
         />
         <Submit className="submit lg:w-1/3 w-full text-black bg-white border py-2 px-16 border-white focus:outline-none">Discover</Submit>
       </Form>
+        <img src="./../../../public/assets/gotita.png" className="lg:w-12 w-8" alt="" />
+        <img src="./../../../public/assets/cloud.png" className="lg:w-32 w-16" alt="" />
       {
         !closeCookie ?
       <div className="cookie border rise-in hidden lg:block py-2 px-6 text-xl text-white weather-cell-subtitle flex flex-row fixed bottom-0">
       <p>no cookies here, but in case you were craving some here you go 🍪🍪🍪</p>
-      <button onClick={()=>setCloseCookie(true)} className="absolute top-0 p-1 right-0">x</button>
+      <button onClick={()=>setCloseCookie(true)} className="absolute top-0 p-1 right-0 focus:outline-none">x</button>
       </div> : ''
       }
 
