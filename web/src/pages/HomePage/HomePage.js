@@ -1,6 +1,8 @@
 import { Form, TextField, Submit } from '@redwoodjs/web'
 import { useState } from 'react'
 import { navigate, routes } from '@redwoodjs/router'
+import gotita from './../../../public/assets/gotita.png'
+import cloud from './../../../public/assets/cloud.png'
 
 const HomePage = () => {
   const [, setZip] = useState()
@@ -36,8 +38,8 @@ const HomePage = () => {
         />
         <Submit className="submit lg:w-1/3 w-full text-black bg-white border py-2 px-16 border-white focus:outline-none">Discover</Submit>
       </Form>
-        <img src="./../../../public/assets/gotita.png" className="lg:w-12 w-8" alt="" />
-        <img src="./../../../public/assets/cloud.png" className="lg:w-32 w-16" alt="" />
+        <img src={gotita} className="lg:w-12 w-8" alt="" />
+        <img src={cloud} className="lg:w-32 w-16" alt="" />
       {
         !closeCookie ?
       <div className="cookie border rise-in hidden lg:block py-2 px-6 text-xl text-white weather-cell-subtitle flex flex-row fixed bottom-0">
