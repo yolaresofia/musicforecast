@@ -1,25 +1,41 @@
-import { Link, routes } from '@redwoodjs/router'
+import { Form, TextField, Submit } from '@redwoodjs/web'
+import { useState } from 'react'
+import { navigate, routes } from '@redwoodjs/router'
 
 const HomePage = () => {
+  const [, setZip] = useState()
+  const [, setName] = useState()
+
+  //setting value for zip code and navigating to MusicForecast page
+  const onSubmit = (data) => {
+    setZip(data.zip)
+    setName(data.name)
+    navigate(routes.musicForecast({ zip: data.zip, name: data.name }))
+  }
+
   return (
-    <div className="text-4xl mt-16 flex max-w-xl mx-auto">
-      <div className="mx-2 w-1/2 text-center">
-        <Link
-          className="block w-full py-12 hover:bg-blue-500 transition duration-100 hover:text-white border border-blue-700 rounded-lg"
-          to={routes.client()}
-        >
-          Client
-        </Link>
-      </div>
-      <div className="mx-2 w-1/2 text-center">
-        <Link
-          className="block w-full py-12 hover:bg-blue-500 transition duration-100 hover:text-white border border-blue-700 rounded-lg"
-          to={routes.server()}
-        >
-          Server
-        </Link>
-      </div>
-    </div>
+    <section className="bg-black flex flex-col h-screen fade-in">
+      <p className="text-white text-5xl lg:text-7xl py-16 px-4 lg:p-20 music-forecast">
+        Music forecast is a web-app that pairs the weather in your location with
+        some good jams
+      </p>
+      <Form onSubmit={onSubmit} className="text-2xl p-3 mx-auto">
+        <TextField
+          className="lg:w-80 w-full border border-white bg-black p-2 placeholder-white focus:outline-none"
+          name="name"
+          placeholder="your name here"
+          validation={{ required: true }}
+        />
+        <TextField
+          className="lg:w-80 w-full border border-white bg-black p-2 placeholder-white focus:outline-none"
+          name="zip"
+          placeholder="zip code"
+          maxLength="5"
+          validation={{ required: true, pattern: /^\d{5}$/ }}
+        />
+        <Submit className="lg:w-72 w-full text-black bg-white border py-2 px-16 border-white hover:bg-black hover:text-white focus:outline-none">Discover</Submit>
+      </Form>
+    </section>
   )
 }
 

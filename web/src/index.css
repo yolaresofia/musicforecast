@@ -1,1 +1,83 @@
+@font-face {
+  font-family: 'Kessler';
+  src: url('./../public/assets/kessler.woff');
+}
 
+@font-face {
+  font-family: 'Verlag-book';
+  src: url('./../public/assets/verlag-book.woff');
+}
+
+section {
+  cursor: url('./../public/assets/mimito.png'), pointer;
+}
+
+.music-forecast {
+  font-family: Kessler;
+}
+
+.weather-cell-headers {
+  font-family: Kessler;
+}
+
+.weather-cell-subtitle {
+  font-family: Verlag-book;
+}
+
+form {
+  font-family: Verlag-book;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee:hover .marquee__item {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.marquee__item {
+  font-family: Verlag-book;
+  display: inline-block;
+  will-change: transform;
+  -webkit-animation: marquee 400s linear infinite;
+          animation: marquee 400s linear infinite;
+}
+
+@-webkit-keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.marquee {
+  background-color: red;
+  padding: 1rem 0;
+  color: #fff;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s;
+}
+
+@keyframes fadeIn {
+    from {
+      filter: brightness(0);
+    }
+    to {
+      filter: brightness(1);
+    }
+}
