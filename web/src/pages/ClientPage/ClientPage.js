@@ -7,7 +7,7 @@ const HomePage = () => {
   // replace the URL with the real one, including your API key:
   const onSubmit = (data) => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?zip=${data.zip},us&appid=YOUR_API_KEY`
+      `https://api.openweathermap.org/data/2.5/weather?zip=${data.zip},us&appid=30545d4fdd3a99247eff407be1803c8c`
     )
       .then((response) => response.json())
       .then((json) => {

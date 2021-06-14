@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 
 export const getWeather = async ({ zip }) => {
   const response = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?zip=${zip},US&appid=aecd3f7bfdb15d9af3646fc41242c915`
+    `http://api.openweathermap.org/data/2.5/weather?zip=${zip},US&appid=30545d4fdd3a99247eff407be1803c8c`
   )
   const json = await response.json()
 
