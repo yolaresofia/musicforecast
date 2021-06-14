@@ -15,10 +15,11 @@ const Marquee = () => {
       .then((json) => setArticles(json.articles))
   }
   return (
-    <div className="marquee">
-      {articles && (
+    <div className="marquee fixed bottom-0">
+      {!articles && (
         <p className="marquee__item text-2xl">
-          {articles.map((x) => x.title + ' ' + x.description + ' |||||||||||| ')}
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto asperiores magnam placeat cum, totam, nostrum ipsum at voluptate, amet eum impedit quas. Labore maxime et fugiat officia nulla. Aliquam, esse.
+          {/* {articles.map((x) => x.title + ' ' + x.description + ' |||||||||||| ')} */}
         </p>
       )}
     </div>

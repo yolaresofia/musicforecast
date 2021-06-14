@@ -6,8 +6,8 @@ const MusicForecastPage = () => {
   const zip = useParams()
   const name = useParams()
   return (
-    <section>
-      <p className="weather-cell-headers text-7xl">Hi {name.name}!</p>
+    <section className="bg-black h-screen">
+      <p className="text-white text-center py-6 px-4 lg:px-32 lg:py-18 music-forecast border">Hi {name.name}!</p>
       {zip && <WeatherCell zip={zip.zip} />}
       <Marquee />
     </section>

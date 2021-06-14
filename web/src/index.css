@@ -12,8 +12,14 @@ section {
   cursor: url('./../public/assets/mimito.png'), pointer;
 }
 
+.weather-playlist-section {
+  height: 72vh;
+}
+
 .music-forecast {
   font-family: Kessler;
+  line-height: 1.1em;
+  font-size: calc(30px +  4vw);
 }
 
 .weather-cell-headers {
@@ -26,6 +32,10 @@ section {
 
 form {
   font-family: Verlag-book;
+}
+
+.submit:hover {
+    background-color: yellow;
 }
 
 .marquee {
@@ -64,9 +74,10 @@ form {
   }
 }
 .marquee {
-  background-color: red;
+  background-color: yellow ;
   padding: 1rem 0;
-  color: #fff;
+  height: 10vh;
+  color: black;
 }
 
 .fade-in {

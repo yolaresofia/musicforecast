@@ -24,27 +24,31 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ weather }) => {
   return (
-<section className="fade-in">
-      <h1 className="weather-cell-headers text-7xl">
-        It's {weather.temp} ºC in {weather.city} and it's a day with{' '}
-        {weather.conditions}
-      </h1>
-      <h1 className="weather-cell-subtitle text-3xl">
-        Here's a playlist for you today
-      </h1>
-      {weather.conditions == 'clear' ? (
-        <iframe
-          src="https://open.spotify.com/embed/playlist/5737dPN0TW9dH7GvXTf7lv?theme=0"
-          title="summer"
-          width="50%"
-          height="380"
-          frameBorder="0"
-          allowtransparency="true"
-          allow="encrypted-media"
-        ></iframe>
-      ) : (
-        <h1>caso 2</h1>
-      )}
+    <section className="fade-in weather-playlist-section flex w-full flex-col lg:flex-row">
+      <div className="lg:w-1/2 border">
+        <h1 className="text-white lg:text-7xl px-4 lg:px-16 lg:py-6 music-forecast">
+          It's {weather.temp} ºC in {weather.city} and it's a day with{' '}
+          {weather.conditions}
+        </h1>
+        <h1 className="weather-cell-subtitle text-3xl lg:px-16 text-white">
+          Here's a playlist for you today
+        </h1>
+      </div>
+      <div className="lg:w-1/2 border">
+        {weather.conditions == 'Clouds' ? (
+          <iframe
+            src="https://open.spotify.com/embed/playlist/5737dPN0TW9dH7GvXTf7lv?theme=0"
+            title="summer"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allowtransparency="true"
+            allow="encrypted-media"
+          ></iframe>
+        ) : (
+          <h1>caso 2</h1>
+        )}
+      </div>
     </section>
   )
 }
