@@ -1,2 +1,2 @@
-#THEMUSICFORECAST
-##This is MusicForecast, a little, simple, cute and very useful web-app built in the RedwoodJS using third party APIs.
+# THEMUSICFORECAST
+## Music forecast is a web-app that pairs the weather in your location with some good jams
