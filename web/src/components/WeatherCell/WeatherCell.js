@@ -25,16 +25,16 @@ export const Failure = ({ error }) => (
 export const Success = ({ weather }) => {
   return (
     <section className="fade-in weather-playlist-section flex w-full flex-col lg:flex-row">
-      <div className="lg:w-1/2 border">
-        <h1 className="text-white lg:text-7xl px-4 lg:px-16 lg:py-6 music-forecast">
+      <div className="lg:w-1/2 border flex-1">
+        <h1 className="text-white lg:text-7xl p-6 lg:px-16 lg:py-6 music-forecast">
           It's {weather.temp} ºC in {weather.city} and it's a day with{' '}
           {weather.conditions}
         </h1>
-        <h1 className="weather-cell-subtitle text-3xl lg:px-16 text-white">
-          Here's a playlist for you today
+        <h1 className="weather-cell-subtitle text-3xl px-6 lg:px-16 text-white">
+          Here's a playlist for you today <span className="lg:text-4xl lg:inline hidden">☞</span><span className="lg:4xl lg:hidden">☟</span>
         </h1>
       </div>
-      <div className="lg:w-1/2 border">
+      <div className="lg:w-1/2 border flex-1">
         {weather.conditions == 'Clouds' ? (
           <iframe
             src="https://open.spotify.com/embed/playlist/5737dPN0TW9dH7GvXTf7lv?theme=0"

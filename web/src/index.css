@@ -13,7 +13,7 @@ section {
 }
 
 .weather-playlist-section {
-  height: 72vh;
+  height: calc(100% - 140px);
 }
 
 .music-forecast {
