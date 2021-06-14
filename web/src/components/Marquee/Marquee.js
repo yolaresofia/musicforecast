@@ -9,7 +9,7 @@ const Marquee = () => {
 
   const getArticles = () => {
     fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=33866b5c9f044e8c8c56cbe29297a55f`
+      `https://gnews.io/api/v4/top-headlines?token=d2fdc6b85ca756dab460f983273a3e8b&lang=en`
     )
       .then((response) => response.json())
       .then((json) => setArticles(json.articles))
