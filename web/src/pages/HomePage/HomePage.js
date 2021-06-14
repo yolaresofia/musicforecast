@@ -5,6 +5,7 @@ import { navigate, routes } from '@redwoodjs/router'
 const HomePage = () => {
   const [, setZip] = useState()
   const [, setName] = useState()
+  const [closeCookie, setCloseCookie] = useState(false)
 
   //setting value for zip code and navigating to MusicForecast page
   const onSubmit = (data) => {
@@ -21,13 +22,13 @@ const HomePage = () => {
       </p>
       <Form onSubmit={onSubmit} className="text-2xl lg:flex w-11/12 lg:w-10/12 p-3 mx-auto">
         <TextField
-          className="lg:w-1/3 w-full border border-white bg-black p-2 placeholder-white focus:outline-none"
+          className="lg:w-1/3 w-full border border-white bg-black p-2 placeholder-white focus:outline-none focus:text-white"
           name="name"
           placeholder="your name here"
           validation={{ required: true }}
         />
         <TextField
-          className="lg:w-1/3 w-full border border-white bg-black p-2 placeholder-white focus:outline-none"
+          className="lg:w-1/3 w-full border border-white bg-black p-2 placeholder-white focus:outline-none focus:text-white"
           name="zip"
           placeholder="zip code"
           maxLength="5"
@@ -35,6 +36,14 @@ const HomePage = () => {
         />
         <Submit className="submit lg:w-1/3 w-full text-black bg-white border py-2 px-16 border-white focus:outline-none">Discover</Submit>
       </Form>
+      {
+        !closeCookie ?
+      <div className="cookie border rise-in hidden lg:block py-2 px-6 text-xl text-white weather-cell-subtitle flex flex-row fixed bottom-0">
+      <p>no cookies here, but in case you were craving some here you go 🍪🍪🍪</p>
+      <button onClick={()=>setCloseCookie(true)} className="absolute top-0 p-1 right-0">x</button>
+      </div> : ''
+      }
+
     </section>
   )
 }

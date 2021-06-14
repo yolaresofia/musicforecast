@@ -92,3 +92,22 @@ form {
       filter: brightness(1);
     }
 }
+
+.cookie {
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.rise-in {
+  animation: riseIn 1.5s;
+}
+
+@keyframes riseIn {
+    from {
+      transform: translate(-50%, -10%)
+    }
+    to {
+      transform: translate(-50%, -50%)
+    }
+}
+
